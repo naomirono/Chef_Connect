@@ -1,0 +1,55 @@
+@media (max-width: 767px) {
+  
+  .circle-svg-1 {
+      position: absolute;
+      background-color: #f97316;
+      border-radius: 50%;
+      width: 260px; 
+      height: 260px; 
+      top: 50%; 
+      left: 35%; 
+      transform: translate(-0.5%, 4%);
+      z-index: -1;
+    }
+
+    .circle-svg-2 {
+      position: absolute;
+      background-color: #f97316;
+      border-radius: 50%;
+      width: 150px; 
+      height: 150px; 
+      top: 27%; 
+      left: 30%; 
+      transform: translate(55%, -1%);
+      z-index: -1;
+    }
+
+}
+
+@media (min-width: 1536px) {
+  
+    .circle-svg-1 {
+        position: absolute;
+        background-color: #f97316;
+        border-radius: 50%;
+        width: 500px; 
+        height: 500px; 
+        top: 8%; 
+        left: 10%; 
+        transform: translate(21%, -4%);
+        z-index: -1;
+      }
+  
+      .circle-svg-2 {
+        position: absolute;
+        background-color: #f97316;
+        border-radius: 50%;
+        width: 400px; 
+        height: 400px; 
+        bottom: 13%; 
+        left: 26%; 
+        transform: translate(11%, -1%);
+        z-index: -1;
+      }
+  
+  }
