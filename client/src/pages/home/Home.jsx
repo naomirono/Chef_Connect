@@ -1,4 +1,5 @@
-import Header from "../../components/layout/Header/Header";
+// import Header from "../../components/layout/Header/Header";
+import Navbar from '../../components/layout/Header/Navbar';
 import Hero from "../../components/layout/Hero/Hero";
 import HowItWorks from "../../components/layout/HowItWorks/HowItWorks";
 import FeaturedChefsSection from "../../components/Layout/Featured/FeaturedChefsSection";
@@ -13,7 +14,8 @@ import Footer from "../../components/Layout/Footer/Footer";
 const Home = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
+      <Navbar/>
       <Hero />
       <HowItWorks />
       <FeaturedChefsSection />
