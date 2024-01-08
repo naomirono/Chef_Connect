@@ -188,3 +188,15 @@ main h1{
 
     
 }
+@media (max-width: 768px) {
+    .navbar_sub-menu .nav-link button,
+    .navbar_sub-menu .nav-link a {
+      background-color: transparent; /* Set background to transparent for smaller devices */
+      border: none; /* Remove border for smaller devices */
+    }
+  
+    .navbar_sub-menu .nav-link button:hover,
+    .navbar_sub-menu .nav-link a:hover {
+      background-color: transparent; /* Set background to transparent on hover for smaller devices */
+    }
+  }
