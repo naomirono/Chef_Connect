@@ -11,7 +11,7 @@ const Hero = () => {
     >
       <div className="absolute inset-0 bg-black opacity-90"></div>
 
-      <div className="container max-w-[1100px] mx-auto md:my-8 md:px-4 lg:px-0 px-4 relative z-10">
+      <div className="container max-w-[1100px] mx-auto md:my-8 md:px-4 lg:px-0 px-4 relative z-10 w-full">
         <div className="flex flex-col-reverse md:flex-row items-center justify-center">
           <div className="md:w-1/2 mt-2 lg:mt-0 md:ml-14 lg:ml-14 lg:mb-28 2xl:ml-4 text-white">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4">
