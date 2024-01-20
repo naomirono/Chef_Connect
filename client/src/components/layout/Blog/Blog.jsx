@@ -49,7 +49,7 @@ const BlogRecipeSection = () => {
                 <p className="text-gray-600">
                   {post.content}
                   <a
-                    href="#"
+                    
                     className="text-orange-500"
                   >
                     ...Read More
