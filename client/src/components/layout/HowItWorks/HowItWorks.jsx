@@ -2,7 +2,7 @@ import { FiSearch, FiCalendar, FiSmile } from 'react-icons/fi';
 
 const HowItWorks = () => {
   return (
-    <section className="py-4 lg:py-16">
+    <section id="howItWorks" className=" lg:py-16">
       <div className="container max-w-[1000px] mx-auto text-center">
         <h2 className="text-3xl sm:text-5xl font-bold mb-8 mt-10 text-white">How <span className='text-orange-500'>It Works</span></h2>
 
