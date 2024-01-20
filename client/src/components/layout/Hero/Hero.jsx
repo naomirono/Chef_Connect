@@ -9,7 +9,14 @@ const Hero = () => {
   const [selectedRating, setSelectedRating] = useState('');
   const navigate = useNavigate();
 
+  const [formError, setFormError] = useState('');
+
   const handleSearch = () => {
+    if (!selectedCuisine && !selectedAvailability && !selectedLocation) {
+      setFormError('Please select the Cuisine, Availability and Location filter.');
+      return;
+    }
+
     const filteredProfiles = chefMockData.filter((chef) => {
       const isCuisineMatch = selectedCuisine
         ? chef.cuisine === selectedCuisine
@@ -104,7 +111,7 @@ const Hero = () => {
         </div>
       </div>
     <div className="relative">
-      <div className="flex items-center justify-center z-10 absolute bottom-[-90px] 2xl:bottom-[-64px] right-[300px] 2xl:right-[380px] hidden lg:block ">
+      <div className="flex items-center justify-center z-10 absolute bottom-[-90px] 2xl:bottom-[-64px] right-[280px] 2xl:right-[380px] hidden lg:block ">
         <div className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-l px-4 pt-4 pb-6 rounded shadow-lg max-w-[1100px] mx-auto">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">Chef Connect</h2>
 
@@ -161,7 +168,7 @@ const Hero = () => {
          </div>
 
 
-    
+         {formError && <p className="text-orange-500">{formError}</p>}
         </div>
       </div>
       </div>
