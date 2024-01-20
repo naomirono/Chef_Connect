@@ -1,0 +1,14 @@
+@media (max-width: 767px){
+  
+    .splashSvgg{
+        top: 30%; 
+        left: 50%; 
+        transform: translate(70%, 1%);
+        z-index: -1;
+    }
+
+    .navigation{
+        position: absolute;
+        top: 3%; 
+    }
+}
