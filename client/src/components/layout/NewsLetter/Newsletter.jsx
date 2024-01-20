@@ -20,7 +20,7 @@ const NewsletterSubscription = () => {
     <section className="py-4 lg:py-16">
       <div className="container mx-0 lg:mx-auto max-w-full lg:max-w-[1000px] relative rounded-lg shadow-md text-center"
         style={{
-          backgroundImage: "url('/src/assets/catering1.jpg')",
+          backgroundImage: "url('https://chefconnectapp.s3.ap-south-1.amazonaws.com/catering1.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}>
