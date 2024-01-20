@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import chefMockData from './ChefMockData';
+import './chefProfile.css'
 
 const ChefDetails = () => {
   const location = useLocation();
+  const navigate = useNavigate();
   const {
     selectedCuisine,
     selectedAvailability,
@@ -13,13 +15,11 @@ const ChefDetails = () => {
 
   const [chefDetails, setChefDetails] = useState([]);
 
+  const handleHomeNavigation = () => {
+    navigate("/");
+  };
+
   useEffect(() => {
-    console.log("Filter Criteria:", {
-      selectedCuisine,
-      selectedAvailability,
-      selectedLocation,
-      selectedRating,
-    });
   
     const filteredChefs = chefMockData.filter((chef) => {
       const cuisineMatch = selectedCuisine ? chef.cuisine === selectedCuisine : true;
@@ -27,47 +27,50 @@ const ChefDetails = () => {
       const locationMatch = selectedLocation ? chef.location === selectedLocation : true;
       const ratingMatch = selectedRating ? chef.rating === parseInt(selectedRating, 10) : true;
   
-      console.log("Chef:", chef);
-      console.log("Matches:", cuisineMatch, availabilityMatch, locationMatch, ratingMatch);
   
       return cuisineMatch && availabilityMatch && locationMatch && ratingMatch;
     });
   
-    console.log("Filtered Chefs:", filteredChefs);
-  
-    setChefDetails(filteredChefs); // Set to the array of matching chefs
+    setChefDetails(filteredChefs); 
   }, [selectedCuisine, selectedAvailability, selectedLocation, selectedRating]);
   
   
 
   return (
-    <div className="max-w-[1000px] mx-auto h-[50vh] mt-24 shadow-md rounded-md ">
+    <div className="max-w-[1000px] mx-auto h-[50vh] mt-24">
+    <div className="flex justify-end p-4">
+          <div
+            className="text-orange-500 cursor-pointer navigation"
+            onClick={handleHomeNavigation}
+          >
+            Exit <i className="fa-solid fa-arrow-right"></i>
+          </div>
+        </div>
      {chefDetails.length > 0 ? (
        chefDetails.map((chef) => (
       
-      <div key={chef.id} className="flex flex-col-reverse md:flex-row items-center justify-center">
-        {/* Left Section: Cuisine Image */}
-        <div className='md:w-1/2 mt-2 lg:mt-0 p-10 text-white flex items-center justify-center'>
+      <div key={chef.id} className="flex flex-col md:flex-row items-center justify-center">
+        
+        <div className='md:w-1/2 p-10 text-white'>
           <img
             src={chef.cuisineImage}
             alt="Cuisine"
             className="w-3/4 h-3/4 z-20"
           />
-          <div className="absolute top-[-170px] right-72 w-full h-full">
-      
-      <img
-        src="https://chefconnectapp.s3.ap-south-1.amazonaws.com/Splash2.svg"  
-        alt="Splash Overlay"
-        className="w-full h-full splashSvg"
-      />
-    </div>
+          <div className="absolute top-[-110px] right-80 w-full h-full z-[-3]">
+            <img
+              src="https://chefconnectapp.s3.ap-south-1.amazonaws.com/Splash2.svg"  
+              alt="Splash Overlay"
+              className="w-full h-full splashSvgg"
+            />
+          </div>
         </div>
-        {/* Right Section: Cuisine Details */}
-        <div className="md:w-1/2 lg:block">
+        
+        <div className="md:w-1/2 lg:block mt-4 p-4">
           <h2 className="text-orange-500 text-2xl font-extrabold font-fira mb-2">
             {chef.cuisine}
           </h2>
-          <p className="text-gray-600 mb-4 p-2 font-inter">{chef.description}</p>
+          <p className="text-gray-600 mb-4 py-2 font-inter">{chef.description}</p>
           <div className="flex items-center mb-4">
             <p className="text-gray-600 mr-8"><i className="fa-solid fa-people-group text-orange-500 mr-2"></i> Serving - {chef.servings} </p>
             <p className="text-gray-600 ml-4"><i className="fa-solid fa-kitchen-set icon text-orange-500 mr-2"></i> Cook Time - {chef.cookTime}</p>
@@ -75,7 +78,7 @@ const ChefDetails = () => {
           <button className="bg-orange-500 text-white mt-4 py-1.5 px-5 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
             Book Now
           </button>
-          {/* Chef Details */}
+        
           <div className="flex items-center mt-4">
             <img
               src={chef.profileImage}
@@ -83,8 +86,8 @@ const ChefDetails = () => {
               className="w-10 h-10 rounded-full border border-orange-500 mr-4"
             />
             <div>
-              <p className="text-gray-600 font-bold">{chef.name}</p>
-              <p className="text-gray-600">{chef.location}</p>
+              <p className="text-gray-400 font-fira font-bold">{chef.name}</p>
+              <p className="text-gray-600 font-fira">{chef.location}</p>
             </div>
           </div>
         </div>
