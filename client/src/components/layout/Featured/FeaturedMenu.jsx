@@ -19,7 +19,7 @@ const FeaturedMenus = () => {
   });
 
   return (
-    <section className="py-16">
+    <section id="menu" className="mt-8 py-16">
       <div className="container mx-auto max-w-[800px]">
        <div className='text-center mb-14'>
        <h2 className="text-5xl font-bold  text-white">Featured <span className='text-orange-500'>Menus</span></h2>
