@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="flex items-start flex-col">
           
             <img
-              src="/src/assets/CateringLogo2.png"
+              src="https://chefconnectapp.s3.ap-south-1.amazonaws.com/CateringLogo2.png"
               alt="Logo"
               className="w-12 h-12 rounded-full bg-white mb-4"
             />
