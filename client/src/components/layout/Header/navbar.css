@@ -34,6 +34,7 @@ main h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 20;
 }
 
 .navbar a {
@@ -50,7 +51,7 @@ main h1{
     list-style: none; 
 }
 .nav-link{
-    padding: 0 2rem;
+    padding: 0 1rem;
     list-style: none; 
 }
 .navbar_menu .nav_link{
@@ -138,7 +139,7 @@ main h1{
         top: 0;
         justify-content: space-around;
         background-color: black;
-        height: 4rem;
+        height: 5rem;
     }
 
     .navbar_logo{
