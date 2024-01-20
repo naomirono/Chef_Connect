@@ -94,7 +94,7 @@ const ChefDetails = () => {
       </div>
     ))
   ) : (
-    <p className="text-orange-500">No matching chefs found.</p>
+    <p className="font-fira text-3xl text-orange-500 flex items-center justify-center mt-28">No matching chefs found.</p>
   )}
 </div>
 
