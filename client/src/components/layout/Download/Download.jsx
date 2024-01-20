@@ -1,4 +1,3 @@
-import React from 'react';
 import "./download.css";
 
 const DownloadApp = () => {
@@ -29,7 +28,7 @@ const DownloadApp = () => {
       {/* Left Section with Image */}
       <div className="w-3/4 lg:w-1/2 lg:pr-8">
         <img
-          src="/src/assets/DownloadApp.png" 
+          src="https://chefconnectapp.s3.ap-south-1.amazonaws.com/DownloadApp.png" 
           alt="Chef Connect App"
           className="w-full h-auto"
         />
@@ -47,8 +46,8 @@ const DownloadApp = () => {
         
         {/* Buttons Aligned Horizontally */}
         <div className="flex space-x-6">
-          <button><img src='/src/assets/app-store-badge.svg' alt="App Play" /></button>
-          <button ><img src='/src/assets/google-play-badge.svg' alt="Google Play" /></button>
+          <button><img src='https://chefconnectapp.s3.ap-south-1.amazonaws.com/app-store-badge.svg' alt="App Play" /></button>
+          <button ><img src='https://chefconnectapp.s3.ap-south-1.amazonaws.com/google-play-badge.svg' alt="Google Play" /></button>
         </div>
       </div>
       </div>
