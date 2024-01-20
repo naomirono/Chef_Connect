@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { useLogoutMutation } from "../../../features/slices/usersApiSlice";
 import { clearCredentials } from "../../../features/slices/authSlice";
-import LogoImage from "/src/assets/CateringLogo2.png";
 import './navbar.css';
 
 const Navbar = () => {
@@ -36,12 +35,19 @@ const Navbar = () => {
         return initials;
       };
 
+      const handleScrollTo = (id) => {
+        const element = document.getElementById(id);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+
     return (
         <>
             <nav className="navbar z-20">
                 <div className="navbar_logo">
                 <img
-                  src={LogoImage}
+                  src='https://chefconnectapp.s3.ap-south-1.amazonaws.com/CateringLogo2.png'
                   alt="Chef Connect Logo"
                   className="h-12 w-auto"
                 />
@@ -49,32 +55,32 @@ const Navbar = () => {
 
                 <ul className="navbar_menu">
                     <li className="nav_link">
-                        <a href="#" className='hover:text-orange-500'>
+                        <a  onClick={() => handleScrollTo('hero')} className='hover:text-orange-500'>
                             <i className="fa-solid fa-house-chimney icon"></i>
                             <span>Home</span>
                         </a>
                     </li>
 
-                    <li className="nav_link">
-                        <a href="#" className='hover:text-orange-500'>
-                            <i className="fa-solid fa-list icon"></i>
-                            <span>Chef</span>
-                        </a>
-                    </li>
-
                     <li className="nav_link hidden lg:block">
-                        <a href="#" className='hover:text-orange-500'>
+                        <a  onClick={() => handleScrollTo('howItWorks')} className='hover:text-orange-500'>
                             <i className="fa-solid fa-list icon"></i>
                             <span>How It Works</span>
                         </a>
                     </li>
 
+                    <li className="nav_link">
+                        <a  onClick={() => handleScrollTo('chef')} className='hover:text-orange-500'>
+                            <i className="fa-solid fa-user icon"></i>
+                            <span>Chef</span>
+                        </a>
+                    </li>
+
 
 
                     <li className="nav_link">
-                        <a href="#" className='hover:text-orange-500'>
-                        <i className="fa-solid fa-hand-holding-dollar icon"></i>
-                            <span>Pricing</span>
+                        <a  onClick={() => handleScrollTo('menu')} className='hover:text-orange-500'>
+                        <i className="fa-solid fa-utensils icon"></i>
+                            <span>Menu</span>
                         </a>
                     </li>
 
