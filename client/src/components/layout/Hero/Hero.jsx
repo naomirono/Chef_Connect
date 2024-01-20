@@ -1,4 +1,48 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import chefMockData from '../ChefProfile/chefMockData';
+
 const Hero = () => {
+  const [selectedCuisine, setSelectedCuisine] = useState('');
+  const [selectedAvailability, setSelectedAvailability] = useState('');
+  const [selectedLocation, setSelectedLocation] = useState('');
+  const [selectedRating, setSelectedRating] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    const filteredProfiles = chefMockData.filter((chef) => {
+      const isCuisineMatch = selectedCuisine
+        ? chef.cuisine === selectedCuisine
+        : true;
+
+      const isAvailabilityMatch = selectedAvailability
+        ? chef.availability === selectedAvailability
+        : true;
+
+      const isLocationMatch = selectedLocation
+        ? chef.location === selectedLocation
+        : true;
+
+      const isRatingMatch = selectedRating
+        ? chef.rating === parseInt(selectedRating, 10)
+        : true;
+
+      return isCuisineMatch && isAvailabilityMatch && isLocationMatch && isRatingMatch;
+    });
+
+    
+
+    // Redirect to Chef Details page after search with selected filters
+    navigate('/chef-details', {
+      state: {
+        selectedCuisine,
+        selectedAvailability,
+        selectedLocation,
+        selectedRating,
+      },
+    });
+  };
+
   return (
     <section
       id="hero"
@@ -60,22 +104,26 @@ const Hero = () => {
         </div>
       </div>
     <div className="relative">
-      <div className="flex items-center justify-center z-10 absolute bottom-[-90px] 2xl:bottom-[-64px] right-[250px] 2xl:right-[380px] hidden lg:block ">
+      <div className="flex items-center justify-center z-10 absolute bottom-[-90px] 2xl:bottom-[-64px] right-[300px] 2xl:right-[380px] hidden lg:block ">
         <div className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-l px-4 pt-4 pb-6 rounded shadow-lg max-w-[1100px] mx-auto">
           <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">Chef Connect</h2>
 
          {/* Filters */}
          <div className="flex items-center space-x-4">
            <select
+           value={selectedCuisine}
+           onChange={(e) => setSelectedCuisine(e.target.value)}
              className=" px-4 py-2 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
            >
              <option value="">Select Cuisine</option>
-             <option value="nyama-choma">Nyama Choma</option>
-             <option value="ugali-fish">Ugali and Fish</option>
-             <option value="sukuma-wiki">Sukuma Wiki</option>
+             <option value="Nyama Choma">Nyama Choma</option>
+             <option value="Ugali and Fish">Ugali and Fish</option>
+             <option value="Fried Chicken Fillet">Fried Chicken Fillet</option>
            </select>
 
            <select
+           value={selectedRating}
+           onChange={(e) => setSelectedRating(e.target.value)}
              className=" px-4 py-2 rounded-md focus:outline-none focus:border-orange-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
            >
              <option value="">Select Rating</option>
@@ -85,30 +133,38 @@ const Hero = () => {
            </select>
 
            <select
+           value={selectedAvailability}
+           onChange={(e) => setSelectedAvailability(e.target.value)}
              className=" px-4 py-2 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
            >
              <option value="">Select Availability</option>
              <option value="lunch">Lunch</option>
              <option value="dinner">Dinner</option>
-             <option value="weekends">Weekends</option>
+             <option value="Weekend">Weekends</option>
            </select>
 
-           <input
-             type="text"
-             placeholder="Enter Location"
-             className="placeholder:text-black px-4 py-2 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
-           />
+           <select
+           value={selectedLocation}
+           onChange={(e) => setSelectedLocation(e.target.value)}
+             className=" px-4 py-2 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
+           >
+             <option value="">Select Location</option>
+             <option value="Nairobi">Nairobi</option>
+             <option value="Nakuru">Nakuru</option>
+             <option value="Mombasa">Mombasa</option>
+           </select>
 
            {/* Get Started Button */}
-           <button className="bg-orange-500 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
+           <button onClick={handleSearch} className="bg-orange-500 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
              Search
            </button>
          </div>
+
+
     
         </div>
       </div>
       </div>
-    
 
     </section>
   );
