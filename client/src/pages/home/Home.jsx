@@ -1,4 +1,3 @@
-// import Header from "../../components/layout/Header/Header";
 import Navbar from '../../components/layout/Header/Navbar';
 import Hero from "../../components/layout/Hero/Hero";
 import HowItWorks from "../../components/layout/HowItWorks/HowItWorks";
@@ -14,7 +13,6 @@ import Footer from "../../components/Layout/Footer/Footer";
 const Home = () => {
   return (
     <div>
-      {/* <Header /> */}
       <Navbar/>
       <Hero />
       <HowItWorks />
