@@ -6,7 +6,6 @@ import { toast } from "react-toastify";
 import { useSignUpMutation } from "../../features/slices/usersApiSlice";
 import { setCredentials } from "../../features/slices/authSlice";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import Logo from "/src/assets/LoginLogo.png";
 import AppLoader from "../../utils/AppLoader";
 import { AppError } from "../../utils/AppError";
 
@@ -72,7 +71,7 @@ const SignUpOne = () => {
       {/* left side */}
       <div className="hidden sm:flex bg-[#FF9549] justify-center items-center flex-1 w-full">
         <div className="text-center">
-          <img src={Logo} alt="logo" />
+          <img src='https://chefconnectapp.s3.ap-south-1.amazonaws.com/LoginLogo.png' alt="logo" />
         </div>
       </div>
 
