@@ -6,19 +6,19 @@ export const chefs = [
       imageSrc: 'https://chefconnectapp.s3.ap-south-1.amazonaws.com/chef2.jpg',
     },
     {
-      name: 'Chef Jane Smith',
+      name: 'Chef Allan Smith',
       expertise: 'Asian Fusion',
       location: 'Nairobi, Kenya',
       imageSrc: 'https://chefconnectapp.s3.ap-south-1.amazonaws.com/CateringF1.jpg',
     },
     {
-        name: 'Chef John Doe',
+        name: 'Chef Abdul Ahmed ',
         expertise: 'Swahili Cuisine',
         location: 'Mombasa, Kenya',
         imageSrc: 'https://chefconnectapp.s3.ap-south-1.amazonaws.com/CateringF2.jpg',
       },
       {
-        name: 'Chef Jane Smith',
+        name: 'Chef Hillary Smith',
         expertise: 'Kikuyu Delicacies',
         location: 'Nakuru, Kenya',
         imageSrc: 'https://chefconnectapp.s3.ap-south-1.amazonaws.com/chef2.jpg',
