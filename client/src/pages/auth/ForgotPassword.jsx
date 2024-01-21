@@ -2,7 +2,6 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { useForgotPasswordMutation } from "../../features/slices/usersApiSlice";
-import Logo from "/src/assets/LoginLogo.png";
 import AppLoader from "../../utils/AppLoader";
 import { validateEmail } from "../../utils/validateEmail";
 
@@ -34,7 +33,7 @@ const ForgotPassword = () => {
       {/* Left side */}
       <div className="hidden sm:flex w-1/2 bg-[#FF9549] justify-center items-center">
         <div className="text-center">
-          <img src={Logo} alt="logo" />
+          <img src='https://chefconnectapp.s3.ap-south-1.amazonaws.com/LoginLogo.png' alt="logo" />
         </div>
       </div>
 
