@@ -3,7 +3,6 @@ import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { setCredentials } from "../../features/slices/authSlice";
-import Logo from "/src/assets/LoginLogo.png";
 import AppLoader from "../../utils/AppLoader";
 import { validateEmail } from "../../utils/validateEmail";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
@@ -51,7 +50,7 @@ const Login = () => {
       {/* Left side */}
       <div className="hidden sm:flex w-1/2 bg-[#FF9549] justify-center items-center">
         <div className="text-center">
-          <img src={Logo} alt="logo" />
+          <img src='https://chefconnectapp.s3.ap-south-1.amazonaws.com/LoginLogo.png' alt="logo" />
         </div>
       </div>
 
