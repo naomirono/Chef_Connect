@@ -57,7 +57,7 @@ const ChefDetails = () => {
             alt="Cuisine"
             className="w-3/4 h-3/4 z-20"
           />
-          <div className="absolute top-[-110px] right-80 w-full h-full z-[-3]">
+          <div className="absolute top-[-220px] lg:top-[-110px] right-80 w-full h-full z-[-3]">
             <img
               src="https://chefconnectapp.s3.ap-south-1.amazonaws.com/Splash2.svg"  
               alt="Splash Overlay"
