@@ -110,68 +110,73 @@ const Hero = () => {
           </div>
         </div>
       </div>
-    <div className="relative">
-      <div className="flex items-center justify-center z-10 absolute bottom-[-90px] 2xl:bottom-[-64px] right-[280px] 2xl:right-[380px] hidden lg:block ">
-        <div className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-l px-4 pt-4 pb-6 rounded shadow-lg max-w-[1100px] mx-auto">
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">Chef Connect</h2>
+      <div className="relative">
+  <div className="flex flex-col items-center justify-center z-10 absolute md:bottom-[-90px] 2xl:bottom-[-64px] left-1/2 transform -translate-x-1/2 w-[90%]">
+    <div className="bg-white bg-opacity-40 backdrop-filter backdrop-blur-l px-4 pt-4 pb-6 rounded shadow-lg max-w-[1100px] mx-auto">
+      <h2 className="text-xl md:text-2xl lg:text-3xl font-bold mb-4">Chef Connect</h2>
 
-         {/* Filters */}
-         <div className="flex items-center space-x-4">
-           <select
-           value={selectedCuisine}
-           onChange={(e) => setSelectedCuisine(e.target.value)}
-             className=" px-4 py-2 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
-           >
-             <option value="">Select Cuisine</option>
-             <option value="Nyama Choma">Nyama Choma</option>
-             <option value="Ugali and Fish">Ugali and Fish</option>
-             <option value="Fried Chicken Fillet">Fried Chicken Fillet</option>
-           </select>
+      {/* Filters */}
+      <div className="flex flex-wrap lg:flex-row items-center lg:space-x-4 lg:space-y-0 ">
+        <select
+          value={selectedCuisine}
+          onChange={(e) => setSelectedCuisine(e.target.value)}
+          className="w-full lg:w-auto px-4 py-2 mb-2 lg:mb-0 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
+        >
+          <option value="">Select Cuisine</option>
+          <option value="Nyama Choma">Nyama Choma</option>
+          <option value="Ugali and Fish">Ugali and Fish</option>
+          <option value="Fried Chicken Fillet">Fried Chicken Fillet</option>
+        </select>
 
-           <select
-           value={selectedRating}
-           onChange={(e) => setSelectedRating(e.target.value)}
-             className=" px-4 py-2 rounded-md focus:outline-none focus:border-orange-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
-           >
-             <option value="">Select Rating</option>
-             <option value="5">5 Stars</option>
-             <option value="4">4 Stars</option>
-             <option value="3">3 Stars</option>
-           </select>
+        { /* Render Rating filter only on larger screens */ }
+        <select
+          value={selectedRating}
+          onChange={(e) => setSelectedRating(e.target.value)}
+          className="hidden lg:block lg:w-auto px-4 py-2 rounded-md focus:outline-none focus:border-orange-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
+        >
+          <option value="">Select Rating</option>
+          <option value="5">5 Stars</option>
+          <option value="4">4 Stars</option>
+          <option value="3">3 Stars</option>
+        </select>
 
-           <select
-           value={selectedAvailability}
-           onChange={(e) => setSelectedAvailability(e.target.value)}
-             className=" px-4 py-2 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
-           >
-             <option value="">Select Availability</option>
-             <option value="lunch">Lunch</option>
-             <option value="dinner">Dinner</option>
-             <option value="Weekend">Weekends</option>
-           </select>
+        <select
+          value={selectedAvailability}
+          onChange={(e) => setSelectedAvailability(e.target.value)}
+          className="w-full lg:w-auto px-4 py-2 mb-2 lg:mb-0 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
+        >
+          <option value="">Select Availability</option>
+          <option value="lunch">Lunch</option>
+          <option value="dinner">Dinner</option>
+          <option value="Weekend">Weekends</option>
+        </select>
 
-           <select
-           value={selectedLocation}
-           onChange={(e) => setSelectedLocation(e.target.value)}
-             className=" px-4 py-2 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
-           >
-             <option value="">Select Location</option>
-             <option value="Nairobi">Nairobi</option>
-             <option value="Nakuru">Nakuru</option>
-             <option value="Mombasa">Mombasa</option>
-           </select>
+        <select
+          value={selectedLocation}
+          onChange={(e) => setSelectedLocation(e.target.value)}
+          className="w-full lg:w-auto px-4 py-2 mb-2 lg:mb-0 rounded-md focus:outline-none focus:border-blue-500 bg-white bg-opacity-40 backdrop-filter backdrop-blur-l"
+        >
+          <option value="">Select Location</option>
+          <option value="Nairobi">Nairobi</option>
+          <option value="Nakuru">Nakuru</option>
+          <option value="Mombasa">Mombasa</option>
+        </select>
 
-           {/* Get Started Button */}
-           <button onClick={handleSearch} className="bg-orange-500 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800">
-             Search
-           </button>
-         </div>
-
-
-         {formError && <p className="text-orange-500">{formError}</p>}
-        </div>
+        {/* Get Started Button */}
+        <button
+          onClick={handleSearch}
+          className="w-full lg:w-auto bg-orange-500 text-white py-2 px-6 rounded-full hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue active:bg-blue-800"
+        >
+          Search
+        </button>
       </div>
-      </div>
+
+      {formError && <p className="text-orange-500">{formError}</p>}
+    </div>
+  </div>
+</div>
+
+
 
     </section>
   );
